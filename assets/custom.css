@@ -230,7 +230,7 @@ img.arrow {
     display: none;
   }
   .section-m-1 {
-    background: url(/cdn/shop/files/bg_27b58800-43be-4c91-8884-dc0ddb2a5f54.png) no-repeat;
+    background: url("https://mulled-prototype.myshopify.com/cdn/shop/files/bg_27b58800-43be-4c91-8884-dc0ddb2a5f54.png") no-repeat;
     background-size: cover;
     height: 100vh;
   }
