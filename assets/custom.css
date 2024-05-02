@@ -87,6 +87,49 @@ img.arrow {
     overflow: hidden;
 }
 
+/* canvas */
+
+.title.product-nav {
+    top: auto;
+    width: max-content;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 10;
+    transform: none;
+    background: #edededd9;
+    padding: 2em 5em .8em;
+    border-radius: 10px 10px 0 0;
+}
+
+.title .product-option img, .title.product-nav .product-option img {
+    padding: 0 .5em .5em;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0;
+}
+
+.title .product-option img {
+    margin: 2em 0;
+}
+
+.product-option img:hover:not(.product-active) {
+    transform: translateY(-5px);
+}
+
+.title img.product-active {
+    border-bottom: 4px solid #fff;
+}
+
+.title.product-nav img.product-active {
+    border-bottom: 4px solid #000;
+}
+
+
+
+/* end canvas */
+
 
 
 /* Define a keyframes animation called fadeInRight */
@@ -142,10 +185,89 @@ img.arrow {
     animation: moveUpDown 1.8s linear infinite;
 }
 
+@keyframes fadeInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+.canvas-fade-in {
+  animation: fadeInFromTop 1.5s ease forwards;
+}
+
+.red-wine,.green-wine {
+  display: none;
+}
+
+.mobile-active {
+  display: flex!important;
+  gap: 2px;
+  flex-direction: column;
+
+}
 
 @media screen and (max-width: 749px){
   .hero-mulled h2 {
     font-size: 22px;
   }
+}
+
+.section-m-2 {
+  display: none;
+}
+
+.section-m-2 img{
+  max-width: 100%;
+}
+
+@media screen and (max-width: 1024px){
+  .canvas-container {
+    display: none;
+  }
+  .section-m-1 {
+    background: url(/cdn/shop/files/bg_27b58800-43be-4c91-8884-dc0ddb2a5f54.png) no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  .title {
+    position: relative!important;
+    margin: auto 2em!important;
+  }
+  
+  .title h2 {
+    font-size: 5.5vw!important;
+    max-width: 100%!important;
+  }
+
+  .title .product-option img {
+    max-width: 40%;
+  }
+
+  button {
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+  
+  /* .title.product-nav {
+    padding: 1em;
+    text-align: center;
+    width: 100%;
+    margin: 0!important;
+  } */
+
+  .title.product-nav {
+    display: none;
+  }
+
+  .section-m-2 {
+    display: block;
+    background: #171717;
+    margin-top: -150px;
+  }
+  
 }

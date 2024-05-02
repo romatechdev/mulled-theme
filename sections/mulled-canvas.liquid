@@ -6,35 +6,66 @@
 <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 <script src="https://codepen.io/GreenSock/pen/vYbbEMa.js"></script>
 
-<div class="canvas-container">
+<div class="canvas-container" id="canvas-wrapper">
   <!-- <canvas id="hero-lightpass"></canvas> -->
-  <canvas id="image-sequence" width="1778" height="1080" />
+  <canvas id="image-sequence" width="1778" height="1080"></canvas>
+  <canvas id="image-sequence-2" width="1778" height="1080"></canvas>
+</div>
+<div class="mobile-tablet">
+  <div class="section-m-1">
+    <div class="title">
+    <h2>Treat your senses to the sweet aroma, the spiced flavour and the warm textures of a Mulled Beverage. Experience this delicious drink with friends or family today.</h2>
+    <div class="product-option">
+      <a href="#canvas-wrapper"><img src="https://cdn.shopify.com/s/files/1/0659/6080/4509/files/nav-product_1.png" width="auto" height="auto" class="img-pd1 product-active" onclick="showFirstCanvas()"></a>
+      <a href="#canvas-wrapper"><img src="https://cdn.shopify.com/s/files/1/0659/6080/4509/files/nav-product_2.png" width="auto" height="auto" class="img-pd2" onclick="showSecondCanvas()"></a>
+    </div>
+    <button class="btn-mulled">Shop</button>
+    </div>
+  </div>
+  <div class="section-m-2">
+    <div class="red-wine mobile-active">
+      <img src="https://cdn.shopify.com/s/files/1/0659/6080/4509/files/hero-1.png?v=1714619348" width="auto" height="auto">
+      <img src="https://cdn.shopify.com/s/files/1/0659/6080/4509/files/0027.png?v=1714470397" width="auto" height="auto">
+      <img src="https://cdn.shopify.com/s/files/1/0659/6080/4509/files/0044.png?v=171447" width="auto" height="auto"> 
+      <img src="https://cdn.shopify.com/s/files/1/0659/6080/4509/files/0066.png?v=171447" width="auto" height="auto"> 
+      <img src="https://cdn.shopify.com/s/files/1/0659/6080/4509/files/0097.png?v=171447" width="auto" height="auto"> 
+    </div>
+    <div class="green-wine">
+      <img src="https://cdn.shopify.com/s/files/1/0659/6080/4509/files/hero-2.png" width="auto" height="auto">
+      <img src="https://cdn.shopify.com/s/files/1/0659/6080/4509/files/0026-gr.png?v=1714629616" width="auto" height="auto">
+      <img src="https://cdn.shopify.com/s/files/1/0659/6080/4509/files/0045-gr.png" width="auto" height="auto"> 
+      <img src="https://cdn.shopify.com/s/files/1/0659/6080/4509/files/0070-gr.png" width="auto" height="auto"> 
+      <img src="https://cdn.shopify.com/s/files/1/0659/6080/4509/files/0099-gr.png" width="auto" height="auto"> 
+    </div>
+  </div>
+  <div class="section-m-3">
+    <div class="title product-nav">
+    <div class="product-option">
+      <a href="#canvas-wrapper"><img src="https://cdn.shopify.com/s/files/1/0659/6080/4509/files/nav-product_1.png" width="auto" height="auto" onclick="showFirstCanvas()"></a>
+      <a href="#canvas-wrapper"><img src="https://cdn.shopify.com/s/files/1/0659/6080/4509/files/nav-product_2.png" width="auto" height="auto" onclick="showSecondCanvas()"></a>
+    </div>
+  </div>
+  </div>
 </div>
 
-<div class="title">
-  <h2>Treat your senses to the sweet aroma, the spiced flavour and the warm textures of a Mulled Beverage. Experience this delicious drink with friends or family today.</h2>
-  <div class="product-option">
-    <img src="https://cdn.shopify.com/s/files/1/0659/6080/4509/files/Simple_Doypack_Mockup_1.png" width="auto" height="auto">
-    <img src="https://cdn.shopify.com/s/files/1/0659/6080/4509/files/Simple_Doypack_Mockup_2.png" width="auto" height="auto">
-  </div>
-  <button class="btn-mulled">Shop</button>
-</div>
+
+    
 <style>
   .title {
     position: absolute;
-    top: 40vh;
-    left: 28vw;
-    transform: translate(-50%, -50%);
-    transition: opacity 2s;
+    top: 45vh;
+    left: 0;
+    transform: translate(0, -50%);
+    transition: .5s;
+    margin: auto 5em;
   }
-
 
   .title h2 {
     color: #fff;
     margin: 0;
     font-family: Lancelot,sans-serif;
-    font-size: 35px;
-    max-width: 614px;
+    font-size: 2.5vw;
+    max-width: 45%;
   }
 
   .canvas-container {
@@ -44,56 +75,37 @@
   }
 
   canvas {
-      position: fixed;
-      width: 100%;
-      height: 100vh;
-      object-fit: fill;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
+
+  canvas#image-sequence,canvas#image-sequence-2 {
+    transition: 1s;
+  }
+
+  canvas#image-sequence-2 {
+    opacity: 0;
+  }
+
+  /* .group-step {
+    position: absolute;
+    top: 0;
+}
+
+  .group-step h2 {
+    color: #fff;
+  } */
+
+  
+  
 </style>
 
 <script>
-    // console.clear();
 
-    // const canvas = document.getElementById("hero-lightpass");
-    // const context = canvas.getContext("2d");
-
-    // canvas.width = 1778;
-    // canvas.height = 1080;
-    // const frameCount = 88;
-    // const currentFrame = index => (
-    //     `https://cdn.shopify.com/s/files/1/0659/6080/4509/files/${(index + 1).toString().padStart(4, '0')}.png`
-    // );
-
-    // const images = []
-    // const airpods = {
-    //     frame: 0
-    // };
-
-    // for (let i = 0; i < frameCount; i++) {
-    //     const img = new Image();
-    //     img.src = currentFrame(i);
-    //     images.push(img);
-    // }
-
-    // gsap.to(airpods, {
-    //     frame: frameCount - 1,
-    //     snap: "frame",
-    //     ease: "none",
-    //     scrollTrigger: {
-    //         scrub: 0.5
-    //     },
-    //     onUpdate: render // use animation onUpdate instead of scrollTrigger's onUpdate
-    // });
-
-    // images[0].onload = render;
-
-    // function render() {
-    //     context.clearRect(0, 0, canvas.width, canvas.height);
-    //     context.drawImage(images[airpods.frame], 0, 0);
-    // }
-
-    let frameCount = 66,
-    urls = new Array(frameCount).fill().map((o, i) => `https://cdn.shopify.com/s/files/1/0659/6080/4509/files/${(i+1).toString().padStart(4, '0')}.png?v=17144702`);
+let frameCount = 100,
+urls = new Array(frameCount).fill().map((o, i) => `https://cdn.shopify.com/s/files/1/0659/6080/4509/files/${(i+1).toString().padStart(4, '0')}.png?v=17144702`);
   
 imageSequence({
   urls, // Array of image URLs
@@ -154,10 +166,19 @@ function imageSequence(config) {
 }
 
 // scroll title
-window.onscroll = function() {scrollFunction()};
+// window.onscroll = function() {scrollFunction()};
+
+// function scrollFunction() {
+//   var titleElement = document.querySelector(".title");
+//   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+//     titleElement.style.opacity = "0";
+//   } else {
+//     titleElement.style.opacity = "1";
+//   }
+// }
 
 function scrollFunction() {
-  var titleElement = document.querySelector(".title");
+  let titleElement = document.querySelector(".title");
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     titleElement.style.opacity = "0";
   } else {
@@ -165,8 +186,111 @@ function scrollFunction() {
   }
 }
 
+// Check if the screen width is at least 1024px before executing the scroll function
+window.onscroll = function() {
+  if (window.matchMedia("(min-width: 1024px)").matches) {
+    scrollFunction();
+  }
+};  
 
 
+// Squence 2
+
+let frameCount2 = 100,
+urls2 = new Array(frameCount2).fill().map((o, i) => `https://cdn.shopify.com/s/files/1/0659/6080/4509/files/${(i+1).toString().padStart(4, '0')}-gr.png`);
+  
+imageSequence2({
+  urls2, // Array of image URLs
+  canvas: "#image-sequence-2", // <canvas> object to draw images to
+  //clear: true, // only necessary if your images contain transparency
+  //onUpdate: (index, image) => console.log("drew image index", index, ", image:", image),
+  scrollTrigger: {
+    start: 0,   // start at the very top
+    end: "max", // entire page
+    scrub: true, // important!
+  }
+});
+
+
+/*
+Helper function that handles scrubbing through a sequence of images, drawing the appropriate one to the provided canvas. 
+Config object properties: 
+- urls2 [Array]: an Array of image URLs
+- canvas [Canvas]: the <canvas> object to draw to
+- scrollTrigger [Object]: an optional ScrollTrigger configuration object like {trigger: "#trigger", start: "top top", end: "+=1000", scrub: true, pin: true}
+- clear [Boolean]: if true, it'll clear out the canvas before drawing each frame (useful if your images contain transparency)
+- paused [Boolean]: true if you'd like the returned animation to be paused initially (this isn't necessary if you're passing in a ScrollTrigger that's scrubbed, but it is helpful if you just want a normal playback animation)
+- fps [Number]: optional frames per second - this determines the duration of the returned animation. This doesn't matter if you're using a scrubbed ScrollTrigger. Defaults to 30fps.
+- onUpdate [Function]: optional callback for when the Tween updates (probably not used very often). It'll pass two parameters: 1) the index of the image (zero-based), and 2) the Image that was drawn to the canvas
+
+Returns a Tween instance
+*/
+function imageSequence2(config) {
+  let playhead = {frame: 0},
+      canvas = gsap.utils.toArray(config.canvas)[0] || console.warn("canvas not defined"),
+      ctx = canvas.getContext("2d"),
+      curFrame = -1,
+      onUpdate = config.onUpdate,
+      images,
+      updateImage = function() {
+        let frame = Math.round(playhead.frame);
+        if (frame !== curFrame) { // only draw if necessary
+          config.clear && ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.drawImage(images[Math.round(playhead.frame)], 0, 0);
+          curFrame = frame;
+          onUpdate && onUpdate.call(this, frame, images[frame]);
+        }
+      };
+  images = config.urls2.map((url, i) => {
+    let img = new Image();
+    img.src = url;
+    i || (img.onload = updateImage);
+    return img;
+  });
+  return gsap.to(playhead, {
+    frame: images.length - 1,
+    ease: "none",
+    onUpdate: updateImage,
+    duration: images.length / (config.fps || 30),
+    paused: !!config.paused,
+    scrollTrigger: config.scrollTrigger
+  });
+}
+
+// Get the canvases
+let canvas1 = document.getElementById('image-sequence');
+let canvas2 = document.getElementById('image-sequence-2');
+let redwine = document.querySelector('.red-wine');
+let greenwine = document.querySelector('.green-wine');
+
+// Get product image 
+const imgPd1Elements = document.querySelector('.img-pd1');
+const imgPd2Elements = document.querySelector('.img-pd2');
+
+function showFirstCanvas() {
+  imgPd1Elements.classList.add('product-active');
+  imgPd2Elements.classList.remove('product-active');
+  canvas1.style.opacity = '1';
+  canvas2.style.opacity = '0';
+  canvas1.classList.add('canvas-fade-in');
+  canvas2.classList.remove('canvas-fade-in');
+  redwine.classList.add('mobile-active');
+  greenwine.classList.remove('mobile-active');
+}
+
+// Function to show the second canvas and hide the first with animation
+function showSecondCanvas() {
+  imgPd1Elements.classList.remove('product-active');
+  imgPd2Elements.classList.add('product-active');
+  canvas1.style.opacity = '0';
+  canvas2.style.opacity = '1';
+  canvas2.classList.add('canvas-fade-in');
+  canvas1.classList.remove('canvas-fade-in');  
+  redwine.classList.remove('mobile-active');
+  greenwine.classList.add('mobile-active');
+}
+
+  
 </script>
 
 {% schema %}
