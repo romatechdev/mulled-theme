@@ -167,6 +167,33 @@ img.arrow {
     transition: 5s;
 }
 
+.title.step1 h2 {
+    font-family: "Six Caps", sans-serif;
+    max-width: none;
+    font-size: 14vw;
+    color: #181818;
+}
+
+.title.step1 {
+  display: none;
+}
+
+/* .title.step1 h3 {
+    font-family: Lancelot,sans-serif;
+    color: #181818;
+    font-size: 3vw;
+    margin-top: 0;
+    line-height: 1;
+}
+
+.title.step1 {
+  position: fixed;
+  /* other styles for your element */
+  opacity: 0; /* Start with the element hidden */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+} */
+
+
 /* Define a keyframes animation called moveUpDown */
 @keyframes moveUpDown {
   0%, 20%, 80%, 100% {
