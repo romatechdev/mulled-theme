@@ -4,7 +4,6 @@
       "type": "image-banner",
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/Group_18.png",
         "image_overlay_opacity": 0,
         "image_height": "large",
         "desktop_content_position": "middle-center",
@@ -17,21 +16,23 @@
         "show_text_below": false
       }
     },
-    "hero_xnR9eK": {
-      "type": "hero",
-      "disabled": true,
-      "settings": {
-      }
-    },
     "mulled_canvas_FegGhr": {
       "type": "mulled-canvas",
       "settings": {
+        "heading": "Treat your senses to the sweet aroma, the spiced flavour and the warm textures of a Mulled Beverage. Experience this delicious drink with friends or family today.",
+        "step_title_1": "STEP 1",
+        "step_description_1": "ADD the spiced bag into a mug",
+        "step_title_2": "STEP 2",
+        "step_description_2": "POUR in your choice of beverage",
+        "step_title_3": "STEP 3",
+        "step_description_3": "HEAT in the microwave for 60 seconds, or heat on the stove for 4-5 m",
+        "product_link_1": "#",
+        "product_link_2": "#"
       }
     }
   },
   "order": [
     "image_banner",
-    "hero_xnR9eK",
     "mulled_canvas_FegGhr"
   ]
 }

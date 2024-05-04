@@ -189,6 +189,12 @@ img.arrow {
     font-size: 3vw;
     margin-top: 0;
     line-height: 1;
+    max-width: 35vw;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 /* Define a keyframes animation called moveUpDown */
@@ -230,7 +236,7 @@ img.arrow {
 
 .mobile-active {
   display: flex!important;
-  gap: 2px;
+  gap: 1px;
   flex-direction: column;
 
 }
@@ -254,9 +260,13 @@ img.arrow {
     display: none;
   }
   .section-m-1 {
-    background: url("https://cdn.shopify.com/s/files/1/0877/4130/1014/files/bg_27b58800-43be-4c91-8884-dc0ddb2a5f54.png") no-repeat;
-    background-size: cover;
+    background: url(https://cdn.shopify.com/s/files/1/0659/6080/4509/files/Group_10.png) top right no-repeat,
+      url(https://cdn.shopify.com/s/files/1/0659/6080/4509/files/bg.png) no-repeat, #171717;
     height: 100vh;
+  }
+  .s-gr {
+    background: url(https://cdn.shopify.com/s/files/1/0659/6080/4509/files/Group_17.png) top right no-repeat,
+      url(https://cdn.shopify.com/s/files/1/0659/6080/4509/files/bg.png) no-repeat, #171717;    
   }
   .title {
     position: relative!important;
@@ -266,6 +276,9 @@ img.arrow {
   .title h2 {
     font-size: 5.5vw!important;
     max-width: 100%!important;
+    background: #0000005c;
+    padding: 20px;
+    border-radius: 5px;
   }
 
   .title .product-option img {
@@ -296,6 +309,10 @@ img.arrow {
 
   .title.step1, .title.step2, .title.step3 {
     display: none;
+  }
+
+  .section-m-2 img:nth-child(1) {
+    padding-bottom: 50px;
   }
   
 }
