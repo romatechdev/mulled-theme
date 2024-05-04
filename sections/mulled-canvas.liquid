@@ -25,6 +25,14 @@
       <h2>STEP 1</h2>
       <h3>ADD the spiced bag <br/>into a mug</h3>
     </div>
+    <div class="title step2">
+      <h2>STEP 2</h2>
+      <h3>POUR in your choice of beverage</h3>
+    </div>
+    <div class="title step3">
+      <h2>STEP 3</h2>
+      <h3>HEAT in the microwave for 60 <br/>seconds, or heat on the stove for<br/> 4-5 minutes</h3>
+    </div>
   </div>
   <div class="section-m-2">
     <div class="red-wine mobile-active">
@@ -62,6 +70,7 @@
     transform: translate(0, -50%);
     transition: .5s;
     margin: auto 5em;
+    z-index: 99;
   }
 
   .title h2 {
@@ -109,7 +118,7 @@
 <script>
 
 let frameCount = 100,
-urls = new Array(frameCount).fill().map((o, i) => `https://cdn.shopify.com/s/files/1/0659/6080/4509/files/${(i+1).toString().padStart(4, '0')}.png?v=17144702`);
+urls = new Array(frameCount).fill().map((o, i) => `https://cdn.shopify.com/s/files/1/0659/6080/4509/files/${(i+1).toString().padStart(4, '0')}.png?v=17147921`);
   
 imageSequence({
   urls, // Array of image URLs
@@ -181,19 +190,35 @@ function imageSequence(config) {
 //   }
 // }
 
-function scrollFunction() {
-  let titleElement = document.querySelector(".title");
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+function scrollFunction(title,px) {
+  let titleElement = document.querySelector(title);
+  if (document.body.scrollTop > px || document.documentElement.scrollTop > px) {
     titleElement.style.opacity = "0";
   } else {
     titleElement.style.opacity = "1";
   }
 }
 
+function stepFunction(title, pxin, pxout) {
+  let titleElement = document.querySelector(title);
+  const scrollY = window.scrollY;
+
+  if (scrollY >= pxin && scrollY <= pxout) {
+    titleElement.style.opacity = "1";
+    titleElement.style.transform = "scale(1)"
+  } else {
+    titleElement.style.opacity = "0";
+    titleElement.style.transform = "scale(0.5)"
+  }
+}
+
 // Check if the screen width is at least 1024px before executing the scroll function
 window.onscroll = function() {
   if (window.matchMedia("(min-width: 1024px)").matches) {
-    scrollFunction();
+    scrollFunction(".title",50);
+    stepFunction(".step1",850,1150);
+    stepFunction(".step2",1200,1700);
+    stepFunction(".step3",1800,4000);
   }
 };  
 
@@ -201,7 +226,7 @@ window.onscroll = function() {
 // Squence 2
 
 let frameCount2 = 100,
-urls2 = new Array(frameCount2).fill().map((o, i) => `https://cdn.shopify.com/s/files/1/0659/6080/4509/files/${(i+1).toString().padStart(4, '0')}-gr.png`);
+urls2 = new Array(frameCount2).fill().map((o, i) => `https://cdn.shopify.com/s/files/1/0659/6080/4509/files/${(i+1).toString().padStart(4, '0')}-gr.png?v=17147924`);
   
 imageSequence2({
   urls2, // Array of image URLs

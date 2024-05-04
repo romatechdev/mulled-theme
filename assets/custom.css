@@ -167,32 +167,29 @@ img.arrow {
     transition: 5s;
 }
 
-.title.step1 h2 {
+.title.step1,.title.step2,.title.step3 {
+    position: fixed;
+    top: 15vh;
+    z-index: 2;
+    opacity: 0;
+}
+
+.title.step1 h2,.title.step2 h2,.title.step3 h2 {
     font-family: "Six Caps", sans-serif;
     max-width: none;
     font-size: 14vw;
     color: #181818;
+    top: 800px;
 }
 
-.title.step1 {
-  display: none;
-}
 
-/* .title.step1 h3 {
+.title.step1 h3,.title.step2 h3,.title.step3 h3 {
     font-family: Lancelot,sans-serif;
     color: #181818;
     font-size: 3vw;
     margin-top: 0;
     line-height: 1;
 }
-
-.title.step1 {
-  position: fixed;
-  /* other styles for your element */
-  opacity: 0; /* Start with the element hidden */
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-} */
-
 
 /* Define a keyframes animation called moveUpDown */
 @keyframes moveUpDown {
@@ -257,7 +254,7 @@ img.arrow {
     display: none;
   }
   .section-m-1 {
-    background: url("https://mulled-prototype.myshopify.com/cdn/shop/files/bg_27b58800-43be-4c91-8884-dc0ddb2a5f54.png") no-repeat;
+    background: url("https://cdn.shopify.com/s/files/1/0877/4130/1014/files/bg_27b58800-43be-4c91-8884-dc0ddb2a5f54.png") no-repeat;
     background-size: cover;
     height: 100vh;
   }
@@ -295,6 +292,10 @@ img.arrow {
     display: block;
     background: #171717;
     margin-top: -150px;
+  }
+
+  .title.step1, .title.step2, .title.step3 {
+    display: none;
   }
   
 }
